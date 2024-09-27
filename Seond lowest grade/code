@@ -1,17 +1,27 @@
+# input the number of records
+n = int(input())
+
+# create a nested blank list to store the name and their score
+
 records = []
-if __name__ == '__main__':
-    for _ in range(int(input())):
+# Loop through each input to make a nested list
+ for _ in range(n):
         name = input()
         score = float(input())
         records.append([name, score])
-        
+
+# sort the list of score
 new_score = sorted(set([student[1] for student in records]))
 
+#Find the second-lowest score
 second_lowest_grade   = new_score[1]
 
+#Find the list of names with the second lowest grade
 second_lowest_score_name = [student[0] for student in records if student[1] == second_lowest_grade]
 
+# Sort the name alphabetically
 second_lowest_score_name.sort()
 
+#print each name
 for student in second_lowest_score_name:
     print(student)
